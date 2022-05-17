@@ -2,6 +2,8 @@
 
 REST-Rant is an app where users can review restaurants.
 
+Routes
+
 | Method      | Path              | Purpos            |
 | :---        |    :----:         |          ---:     |
 | Get         | /                 | Home Page         |
@@ -15,3 +17,16 @@ REST-Rant is an app where users can review restaurants.
 | Post        | /places/:id/rant  | Home Page         |
 | Delete      | /places/:id/rantId| Home Page         |
 | Get         | *                 | Home Page         |
+
+
+Locations 
+
+| Field         | Type     | 
+| :---          | :----:   | 
+| name          | String   | 
+| city          | String   |
+| state         | String   |
+| cuisines      | String   |
+| pic           | String   |
+
+
