@@ -1,18 +1,20 @@
 const React = require('react')
 const Def = require('../default')
 
-function new_form () {
+function edit_form (data) {
     return (
         <Def>
-            <main>
-                <h1>Add a New Place</h1> 
-                <form method="POST" action="/places">
+          <main>
+            <h1>Edit Place</h1>
+            <form method="POST" action={`/places/${data.id}?_method=PUT`}>
+                <div className="row">
                     <div className="form-group">
                         <lable htmlFor="name">Place Name</lable>
                         <input 
                             className="form-control" 
                             id="name" 
                             name="name" 
+                            value= {data.place.name} 
                             required/>
                     </div>
                     <div className="form-group">
@@ -23,6 +25,8 @@ function new_form () {
                             id="pic" 
                             name="pic" />
                     </div>
+                </div>
+                <div>
                     <div className="form-group">
                         <lable htmlFor="city">City</lable>
                         <input 
@@ -37,6 +41,7 @@ function new_form () {
                             id="state" 
                             name="state" />
                     </div>
+                </div>
                     <div className="form-group">
                         <lable htmlFor="cuisine">Cuisines</lable>
                         <input 
@@ -52,9 +57,9 @@ function new_form () {
                             value="Add Place" />
                     </div>
                 </form>  
-            </main>
+          </main>
         </Def>
     )
 }
 
-module.exports = new_form
+module.exports = edit_form
