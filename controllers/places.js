@@ -34,6 +34,12 @@ router.get('/:id', (req, res) => {
     res.render('places/show', { place: places[id], id })
   }
 })
+
+router.post('/', (req, res) => {
+  console.log(req.body)
+  res.send('POST /places')
+})
+ 
 router.delete('/:id', (req, res) => {
   let id = Number(req.params.id)
   if (isNaN(id)) {

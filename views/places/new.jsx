@@ -7,28 +7,28 @@ function new_form () {
             <main>
                 <h1>Add a New Place</h1> 
                 <form method="POST" action="/places">
-                    <div>
+                    <div className="form-group">
                         <lable htmlFor="name">Place Name</lable>
-                        <input id="name" name="name" required/>
+                        <input className="form-control" id="name" name="name" required/>
                     </div>
-                    <div>
+                    <div className="form-group">
                         <lable htmlFor="pic">Picture</lable>
-                        <input type= 'url' id="pic" name="pic" />
+                        <input className="form-control" type= 'url' id="pic" name="pic" />
                     </div>
-                    <div>
+                    <div className="form-group">
                         <lable htmlFor="city">City</lable>
-                        <input id="city" name="city" />
+                        <input className="form-control" id="city" name="city" />
                     </div>
-                    <div>
+                    <div className="form-group">
                         <lable htmlFor="state">State</lable>
-                        <input id="state" name="state" />
+                        <input className="form-control" id="state" name="state" />
                     </div>
-                    <div>
+                    <div className="form-group">
                         <lable htmlFor="cuisine">Cuisines</lable>
-                        <input id="cuisine" name="cuisine" required/>
+                        <input className="form-control" id="cuisine" name="cuisine" required/>
                     </div>
                     <div>
-                        <input type='submit' value='Add Place' />
+                        <input className="btn btn-primary" type="submit" value="Add Place" />
                     </div>
                 </form>  
             </main>
