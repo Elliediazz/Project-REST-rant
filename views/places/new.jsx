@@ -45,12 +45,10 @@ function new_form () {
                             name="cuisine" 
                             required/>
                     </div>
-                    <div>
                         <input 
                             className="btn btn-primary" 
                             type="submit" 
                             value="Add Place" />
-                    </div>
                 </form>  
             </main>
         </Def>

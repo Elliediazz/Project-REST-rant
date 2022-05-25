@@ -6,6 +6,9 @@ img {
   max-width: 50%;
   max-height: 50%;
 }
+#box{
+  border:solid 5px ;
+}
 nav {
   background-color: cornflowerblue;
   padding: 10px;
@@ -41,3 +44,6 @@ main {
   background-color: white;
 }
 
+.btn {
+  margin: 10px;
+}
