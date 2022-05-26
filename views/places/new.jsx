@@ -38,13 +38,21 @@ function new_form () {
                             name="state" />
                     </div>
                     <div className="form-group">
-                        <lable htmlFor="cuisine">Cuisines</lable>
+                        <lable htmlFor="cuisines">Cuisines</lable>
                         <input 
                             className="form-control" 
-                            id="cuisine" 
-                            name="cuisine" 
+                            id="cuisines" 
+                            name="cuisines" 
                             required/>
                     </div>
+                    <div className="form-group">
+                        <label htmlFor="founded">Year Founded</label>
+                        <input 
+                            className="form-control" 
+                            id="founded" 
+                            name="founded"/>
+                    </div>
+
                         <input 
                             className="btn btn-primary" 
                             type="submit" 
