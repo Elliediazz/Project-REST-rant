@@ -19,12 +19,19 @@ router.get('/new', (req, res) => {
 
 //Get place by ID
 router.get('/:id', (req, res) => {
-  res.send('GET /places/:id stub')
+  db.Place.findById(req.params.id)
+  .then(place => {
+    res.render('places/show', { place })
+  })
+  .catch(err => {
+    console.log('err', err)
+    res.render('error404')
+  })
 })
 
 //New places submitted
 router.post('/', (req, res) => {
-  console.log (req.body)
+  //console.log (req.body)
   db.Place.create(req.body)
   .then(() => {
       res.redirect('/places')
