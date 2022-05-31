@@ -22,7 +22,9 @@ const placeSchema = new mongoose.Schema({
         default: 'USA' 
     },
     founded: {
-        type: Number
+        type: Number,
+        min: [1800],
+        max:[new Date().getFullYear()]
     }
 }) 
 

@@ -7,7 +7,7 @@ function new_form () {
             <main>
                 <h1>Add a New Place</h1> 
                 <form method="POST" action="/places">
-                    <div className="form-group">
+                    <div className="form-group col-sm-4">
                         <lable htmlFor="name">Place Name</lable>
                         <input 
                             className="form-control" 
@@ -15,7 +15,7 @@ function new_form () {
                             name="name" 
                             required/>
                     </div>
-                    <div className="form-group">
+                    <div className="form-group col-sm-4">
                         <lable htmlFor="pic">Picture</lable>
                         <input 
                             className="form-control" 
@@ -23,21 +23,21 @@ function new_form () {
                             id="pic" 
                             name="pic" />
                     </div>
-                    <div className="form-group">
+                    <div className="form-group col-sm-4">
                         <lable htmlFor="city">City</lable>
                         <input 
                             className="form-control" 
                             id="city" 
                             name="city" />
                     </div>
-                    <div className="form-group">
+                    <div className="form-group col-sm-4">
                         <lable htmlFor="state">State</lable>
                         <input 
                             className="form-control" 
                             id="state" 
                             name="state" />
                     </div>
-                    <div className="form-group">
+                    <div className="form-group col-sm-4">
                         <lable htmlFor="cuisines">Cuisines</lable>
                         <input 
                             className="form-control" 
@@ -45,12 +45,15 @@ function new_form () {
                             name="cuisines" 
                             required/>
                     </div>
-                    <div className="form-group">
+                    <div className="form-group col-sm-4">
                         <label htmlFor="founded">Year Founded</label>
                         <input 
+                            type= "number"
                             className="form-control" 
                             id="founded" 
-                            name="founded"/>
+                            name="founded"
+                            value= {new Date.getFullYear()}
+                            />
                     </div>
 
                         <input 
