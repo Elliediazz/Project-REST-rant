@@ -52,7 +52,7 @@ function new_form () {
                             className="form-control" 
                             id="founded" 
                             name="founded"
-                            value= {new Date.getFullYear()}
+                            //value= {new Date.getFullYear()} why is this not working??
                             />
                     </div>
 
