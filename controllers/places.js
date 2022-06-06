@@ -34,13 +34,16 @@ router.get('/:id', (req, res) => {
 //New places submitted
 router.post('/', (req, res) => {
   //console.log (req.body)
+  if(!req.body.pic){
+    delete req.body['pic']
+  }
   db.Place.create(req.body)
   .then(() => {
-      res.redirect('/places')
+    res.redirect('/places')
   })
   .catch(err => {
-      console.log('err', err)
-      res.render('error404')
+    console.log('err', err)
+    res.render('error404')
   })
 })
 
@@ -66,6 +69,30 @@ router.post('/:id/rant', (req, res) => {
   res.send('GET /places/:id/rant stub')
 })
 
+//Comments
+router.post('/:id/comment', (req, res) => {
+  console.log(req.body)
+  req.body.rant ==='on' ? req.body.rant = true: req.body.rant = false;
+  db.Place.findById(req.params.id)
+  .then(place => {
+      db.Comment.create(req.body)
+      .then(comment => {
+          place.comments.push(comment._id)
+          place.save()
+          .then(() => {
+              res.redirect(`/places/${req.params.id}`)
+          })
+      })
+      .catch(err => {
+        //console.log('err 1', err)
+        res.render('error404')
+      })
+  })
+  .catch(err => {
+    //console.log('err 2', err)
+    res.render('error404')
+  })
+})
 
 
 module.exports = router

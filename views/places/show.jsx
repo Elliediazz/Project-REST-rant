@@ -33,25 +33,23 @@ function show (data) {
                 </h3>
               </div>
               <div className='col-sm-5'>
-                <h2> Ratings:</h2>
-                <div id="box">
-                  <h3>No Ratings yet!</h3>
+                <h3> Ratings:</h3>
+                <div>
+                  <h4>Not Rated</h4>
                 </div>
-                <h2>
-                  Description
-                </h2>
                 <h3>
-                  {data.place.showEstablished()}
+                  Description
                 </h3>
                 <h4>
-                  Serving {data.place.cuisines}
+                  {data.place.showEstablished()}
                 </h4>
-              </div>
-              <div className='col-sm-6'>
-                <a href={`/places/${data.id}/edit`} className="btn btn-warning"> 
+                <h5>
+                  Serving {data.place.cuisines}
+                </h5>
+                <a href={`/places/${data.place._id}/edit`} className="btn btn-warning"> 
                   Edit
                 </a>  
-                <form method="POST" action={`/places/${data.id}?_method=DELETE`}> 
+                <form method="POST" action={`/places/${data.place._id}?_method=DELETE`}> 
                   <button type="submit" className="btn btn-danger">
                     Delete
                   </button>
@@ -59,16 +57,51 @@ function show (data) {
               </div>
               <div>
                 <h2>Comments:</h2>
-                <div id="box">
+                <div className='row'>
                   {comments}
                 </div>
+                <form className='form-inline' method="POST" action={`/places/${data.place._id}/comment`}>
+                    <div className="form-group">
+                        <lable>Content</lable>
+                        <textarea 
+                            className="form-control" 
+                            type= 'string' 
+                            name='content'
+                            rows='5'/>
+                    </div>
+                  <div className='row'>
+                    <div className="form-group col-sm-6">
+                        <lable htmlFor="name">Your Name</lable>
+                        <input 
+                            className="form-control" 
+                            type='string'
+                            name='author'
+                            required/>
+                    </div>
+                    <div className="form-group col-sm-3">
+                        <lable htmlFor="rating"> Star Rating </lable>
+                        <input 
+                            type='range'
+                            name="stars" 
+                            required/>
+                    </div>
+                    <div class="checkbox col-sm-3">
+                        <label> Rant </label>
+                          <input  
+                            name="rant"
+                            type="checkbox"/> 
+                    </div>
+                        <input 
+                            className="btn btn-primary" 
+                            type="submit" 
+                            value="Add comment" />
+                  </div>
+                </form>  
               </div>
             </div>
           </main>
         </Def>
     )
 }
-    
-
 
 module.exports = show
