@@ -17,12 +17,16 @@ function show (data) {
       return tot + c.stars
     }, 0)
     let averageRating = sumRatings / data.place.comments.length
+    let stars = ''
+    for (let i=0; i < averageRating; i++) {
+      stars += 'X'
+    }
     rating = (
       <h3>
-        {Math.round(averageRating)} stars
+        {stars} stars
       </h3>
     )
-  }
+  } 
   if (data.place.comments.length) {
     comments = data.place.comments.map(c => {
       return (
@@ -76,7 +80,7 @@ function show (data) {
                   </div>
                   <div className="form-group col-sm-3">
                     <lable htmlFor="rating"> Star Rating </lable>
-                    <input type='range' name="stars" required/>
+                    <input type='range' className='from-range' min='0' max='5' name="stars" required/>
                   </div>
                   <div className="checkbox col-sm-3">
                     <label> Rant </label>
