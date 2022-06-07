@@ -34,8 +34,8 @@ router.get('/:id', (req, res) => {
 //New places submitted
 router.post('/', (req, res) => {
   //console.log (req.body)
-  if(!req.body.pic){
-    delete req.body['pic']
+  if(!req.body.image){
+    delete req.body['image']
   }
   db.Place.create(req.body)
   .then(() => {

@@ -7,7 +7,7 @@ const placeSchema = new mongoose.Schema({
     },
     image: {
         type: String,
-        default:'http://placekitten.com/200/300'
+        default:'http://nellyfurtadomusic.com/wp-content/uploads/2021/02/Cannabis-Dispensary-In-Canada.jpg'
     },
     cuisines: { 
         type: String, 
@@ -27,8 +27,7 @@ const placeSchema = new mongoose.Schema({
         max:[new Date().getFullYear()]
     },
     comments: [{
-        type: mongoose.Schema.Types.ObjectId, 
-        ref: 'Comment'
+        type: mongoose.Schema.Types.ObjectId, ref: 'Comment'
     }]
 }) 
 
