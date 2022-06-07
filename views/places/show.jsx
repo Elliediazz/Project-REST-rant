@@ -19,7 +19,7 @@ function show (data) {
     let averageRating = sumRatings / data.place.comments.length
     let stars = ''
     for (let i=0; i < averageRating; i++) {
-      stars += 'X'
+      stars += '⭐'
     }
     rating = (
       <h3>
@@ -46,10 +46,10 @@ function show (data) {
         <main>
           <div className='row'>
             <div className='col-sm-6'>
-              <img src={data.place.image} alt={data.place.name}></img>
+              <img src= {data.place.image} alt={data.place.name}></img>
               <h3>Locted in {data.place.city}, {data.place.state}</h3>
             </div>
-            <div className='col-sm-5'>
+            <div className=' margin col-sm-5'>
               <h1>{data.place.name}</h1>
               <h2> Ratings:</h2>
               <div className='text-muted'>
@@ -65,7 +65,7 @@ function show (data) {
                 </form> 
               </div>
             </div>
-            <div>
+            <div> 
               <h2>Comments:</h2>
               <div className='row'>{comments}</div>
               <form className='form-inline' method="POST" action={`/places/${data.place._id}/comment`}>

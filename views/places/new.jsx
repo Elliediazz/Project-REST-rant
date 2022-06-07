@@ -17,12 +17,12 @@ function new_form () {
                             required/>
                     </div>
                     <div className="form-group col-md-8">
-                        <lable htmlFor="pic">Picture</lable>
+                        <lable htmlFor="image">Picture</lable>
                         <input 
                             className="form-control" 
                             type= 'url' 
-                            id="pic" 
-                            name="pic" />
+                            id="image" 
+                            name="image" />
                     </div>
                     <div className="form-group col-md-8">
                         <lable htmlFor="city">City</lable>
@@ -67,4 +67,4 @@ function new_form () {
     )
 }
 
-module.exports = new_form``
+module.exports = new_form

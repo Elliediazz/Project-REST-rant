@@ -2,18 +2,19 @@ h1 {
   text-align: center;
   color: cornflowerblue;
 }
+
 h2 {
   text-align: center;
   color:lightblue;
 }
+
 img {
-  max-width: 400px;
-  max-height: 400px;
+  max-width: 500px;
+  max-height: 500px;
   margin: 25px;
 }
-#box{
-  border:solid 5px ;
-}
+
+/* Nav Bar */
 nav {
   background-color: cornflowerblue;
   padding: 10px;
@@ -38,6 +39,7 @@ nav a:hover {
   color: pink;
   text-decoration: none;
 }
+
 body {
   background-color: lightblue;
   text-align: center;
@@ -52,6 +54,15 @@ main {
 .btn {
   margin: 10px;
 }
+
 .row {
+  margin: 10px;
+}
+
+#box{
+  border:solid lightgrey 5px ;
+}
+
+.margin {
   margin: 10px;
 }
