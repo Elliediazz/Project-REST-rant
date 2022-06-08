@@ -12,10 +12,12 @@ function edit_form (data) {
                         <lable htmlFor="name">Place Name</lable>
                         <input 
                             className="form-control" 
+                            type= 'text'
                             id="name" 
                             name="name" 
-                            value= {data.place.name} 
-                            required/>
+                            defaultValue= {data.place.name} 
+                            required
+                        />
                     </div>
                     <div className="form-group col-sm-6">
                         <lable htmlFor="image">Picture</lable>
@@ -23,7 +25,9 @@ function edit_form (data) {
                             className="form-control" 
                             type= 'url' 
                             id="image" 
-                            name="image" />
+                            name="image" 
+                            defaultValue= {data.place.image} 
+                        />
                     </div>
                 </div>
                 <div className="row">
@@ -32,14 +36,18 @@ function edit_form (data) {
                         <input 
                             className="form-control" 
                             id="city" 
-                            name="city" />
+                            name="city" 
+                            defaultValue= {data.place.city} 
+                        />
                     </div>
                     <div className="form-group col-sm-6">
                         <lable htmlFor="state">State</lable>
                         <input 
                             className="form-control" 
                             id="state" 
-                            name="state" />
+                            name="state" 
+                            defaultValue= {data.place.state} 
+                        />
                     </div>
                     <div className="form-group col-sm-6">
                         <lable htmlFor="founded">Founded</lable>
@@ -47,17 +55,20 @@ function edit_form (data) {
                             className="form-control" 
                             id="founded" 
                             name="founded"
-                            value= {data.place.founded} />
+                            defaultValue= {data.place.founded} 
+                        />
                     </div>
-                </div>
-                    <div className="form-group">
+                    <div className="form-group col-sm-6">
                         <lable htmlFor="cuisines">Cuisines</lable>
                         <input 
                             className="form-control" 
                             id="cuisines" 
                             name="cuisines" 
-                            required/>
+                            defaultValue= {data.place.cuisines} 
+                            required
+                        />
                     </div>
+                </div>
                     <div>
                         <input 
                             className="btn btn-primary" 
